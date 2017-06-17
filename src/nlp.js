@@ -3,7 +3,7 @@ export const ALL = {
     intents: ['GetAllCurrencies'],
     slots: [],
     utterances: [
-      '{-|list|show|show me|tell me|give me} {-|all} {-|the} {-|currencies}',
+      '{list|show|show me|tell me|give me} {-|all} {-|the} {currencies}',
     ],
   },
 }
@@ -14,8 +14,8 @@ export const CLIPS = {
       CURRENCY: 'CURRENCIES',
     },
     utterances: [
-      '{-|compare} {-USD|dollar|US Dollar} {-|to} {-|the} {-|CURRENCY}',
-      '{-|rate|rates|exchange} {-|for|between} {-|the} {-|CURRENCY}'
+      '{compare} {-USD|dollar|US Dollar} {-|to} {-|the} {-|CURRENCY}',
+      '{rate|rates|exchange} {-|for|between} {-|the} {-|CURRENCY}'
     ],
   },
   SUPPORTED: {
@@ -24,8 +24,8 @@ export const CLIPS = {
       CURRENCY: 'CURRENCIES',
     },
     utterances: [
-      '{-|is} {-|the} {-|CURRENCY} {-|supported}',
-      '{-|do you} {-|support|have} {-|the} {-|CURRENCY}',
+      '{-|is} {-|the} {-|CURRENCY} {supported}',
+      '{-|do you} {support|have} {-|the} {-|CURRENCY}',
     ],
   },
   slotTypes: {
@@ -35,15 +35,17 @@ export const CLIPS = {
 
 export const SYSTEM = {
   HELP: {
-    intents: ['AMAZON.HelpIntent', 'help'],
+    intents: ['AMAZON.HelpIntent', 'Help'],
     slots: [],
-    utterances: [],
+    utterances: [
+      '{help} {-|me}'
+    ],
     responses: {
-      intro: `US Dollar Exchange is a currency converter than will tell you how foriegn
-      currencies currently compare to the US Dollar`,
       help: `You can use this bot to check supported currency by asking "is Euro
         supported".  Likewise compare by currency by saying "compare to Euro".
-        If you need a list of currencies, just say "list currencies"`,
+        If you need a list of currencies, just say "list currencies". If you are
+        finished with your experience say quit`,
+      reprompt: `Can I help you with anything?`
     },
   },
   LAUNCH: {
@@ -51,21 +53,26 @@ export const SYSTEM = {
     slots: [],
     utterances: [],
     responses: {
-      greeting: `Welcome to US Dollar Exchange!`,
+      intro: `US Dollar Exchange is a currency converter than will tell you how foriegn
+      currencies currently compare to the US Dollar`,
     }
   },
   START: {
-    intents: ['AMAZON.StartOverIntent'],
+    intents: ['AMAZON.StartOverIntent', 'Start'],
     slots: [],
-    utterances: [],
+    utterances: [
+      '{hi|hello|hey|start|begin}'
+    ],
     responses: {
-      greeting: `Would you like to compare a currency to the US Dollar?`,
+      greeting: `Hello! Welcome to US Dollar Exchange! Say help for more options`,
     }
   },
   STOP: {
-    intents: ['AMAZON.CancelIntent', 'AMAZON.StopIntent', 'quit', 'exit', 'bye', 'thanks'],
+    intents: ['AMAZON.CancelIntent', 'AMAZON.StopIntent', 'Quit'],
     slots: [],
-    utterances: [],
+    utterances: [
+      '{quit|exit|bye|end|finished|no|nope}'
+    ],
     responses: {
       goodbye: 'Goodbye!',
     },

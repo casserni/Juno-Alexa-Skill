@@ -27,3 +27,17 @@ Supported do you support {CURRENCY}
 Supported do you have {CURRENCY}
 Supported do you support the {CURRENCY}
 Supported do you have the {CURRENCY}
+Help help
+Help help me
+Start hi
+Start hello
+Start hey
+Start start
+Start begin
+Quit quit
+Quit exit
+Quit bye
+Quit end
+Quit finished
+Quit no
+Quit nope

@@ -38,7 +38,7 @@ ear.hears(ALL.ALL_CURRENCIES.intents, ['message_received'], function(bot, messag
       bot.reply(message,
         response
         .say(`Supported currencies are as follows ${getNames().join(', ')}`)
-        .shouldEndSession(false)
+        .shouldEndSession(true)
       );
     // message.utu.event("All Currencies");
 });
@@ -52,7 +52,7 @@ ear.hears(CLIPS.RATES.intents, ['message_received'], function(bot, message) {
           bot.reply(message,
             response
               .say(`One US Dollar is equivalent to ${res} ${currency}`)
-              .shouldEndSession(false)
+              .shouldEndSession(true)
           );
         });
       // message.utu.event("Rate by Currency", {
@@ -73,6 +73,7 @@ ear.hears(CLIPS.RATES.intents, ['message_received'], function(bot, message) {
     bot.reply(message,
       response
         .ask("Sorry, I didn't catch a currency.  Can you repeat the statement?")
+        .reprompt(SYSTEM.HELP.responses.help)
         .shouldEndSession(false)
     );
     // message.utu.event("Error - Rate by Currency");
@@ -88,14 +89,13 @@ ear.hears(CLIPS.SUPPORTED.intents, ['message_received'], function(bot, message) 
       bot.reply(message,
         response
           .say(`Yes, ${currency} is supported`)
-          .shouldEndSession(false)
+          .shouldEndSession(true)
           );
     } else {
       bot.reply(message,
         response
           .ask(`No, ${currency} is not currently supported.`)
-          .reprompt(SYSTEM.HELP.responses.help)
-          .shouldEndSession(false)
+          .shouldEndSession(true)
       );
     }
     // message.utu.event("Supported", {
@@ -126,7 +126,6 @@ ear.hears(SYSTEM.HELP.intents, ['message_received'], (bot, message) => {
 ear.hears(SYSTEM.STOP.intents, ['message_received'], (bot, message) => {
   bot.reply(message,
     response
-      .say(SYSTEM.STOP.responses.goodbye)
       .shouldEndSession(true)
   );
   // message.utu.event("Goodbye");

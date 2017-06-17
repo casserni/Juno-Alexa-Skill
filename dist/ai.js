@@ -32,7 +32,7 @@ _listener2.default.hears(_nlp.SYSTEM.START.intents, ['message_received'], functi
 
 _listener2.default.hears(_nlp.ALL.ALL_CURRENCIES.intents, ['message_received'], function (bot, message) {
   (0, _service.getNames)();
-  bot.reply(message, _alexaResponse2.default.say('Supported currencies are as follows ' + (0, _service.getNames)().join(', ')).shouldEndSession(false));
+  bot.reply(message, _alexaResponse2.default.say('Supported currencies are as follows ' + (0, _service.getNames)().join(', ')).shouldEndSession(true));
   // message.utu.event("All Currencies");
 });
 
@@ -41,7 +41,7 @@ _listener2.default.hears(_nlp.CLIPS.RATES.intents, ['message_received'], functio
   if (currency) {
     if (_nlp.CLIPS.slotTypes.CURRENCIES.indexOf(currency.toLowerCase()) > 0) {
       (0, _service.getRateByCurrency)(currency).then(function (res) {
-        bot.reply(message, _alexaResponse2.default.say('One US Dollar is equivalent to ' + res + ' ' + currency).shouldEndSession(false));
+        bot.reply(message, _alexaResponse2.default.say('One US Dollar is equivalent to ' + res + ' ' + currency).shouldEndSession(true));
       });
       // message.utu.event("Rate by Currency", {
       //   values: {
@@ -53,7 +53,7 @@ _listener2.default.hears(_nlp.CLIPS.RATES.intents, ['message_received'], functio
       // message.utu.event("Error - Rate by Currency");
     }
   } else {
-    bot.reply(message, _alexaResponse2.default.ask("Sorry, I didn't catch a currency.  Can you repeat the statement?").shouldEndSession(false));
+    bot.reply(message, _alexaResponse2.default.ask("Sorry, I didn't catch a currency.  Can you repeat the statement?").reprompt(_nlp.SYSTEM.HELP.responses.help).shouldEndSession(false));
     // message.utu.event("Error - Rate by Currency");
   }
 });
@@ -64,9 +64,9 @@ _listener2.default.hears(_nlp.CLIPS.SUPPORTED.intents, ['message_received'], fun
     console.log(currency);
     console.log(_nlp.CLIPS.slotTypes.CURRENCIES);
     if (_nlp.CLIPS.slotTypes.CURRENCIES.indexOf(currency.toLowerCase()) > 0) {
-      bot.reply(message, _alexaResponse2.default.say('Yes, ' + currency + ' is supported').shouldEndSession(false));
+      bot.reply(message, _alexaResponse2.default.say('Yes, ' + currency + ' is supported').shouldEndSession(true));
     } else {
-      bot.reply(message, _alexaResponse2.default.ask('No, ' + currency + ' is not currently supported.').reprompt(_nlp.SYSTEM.HELP.responses.help).shouldEndSession(false));
+      bot.reply(message, _alexaResponse2.default.ask('No, ' + currency + ' is not currently supported.').shouldEndSession(true));
     }
     // message.utu.event("Supported", {
     //   values: {
@@ -85,6 +85,6 @@ _listener2.default.hears(_nlp.SYSTEM.HELP.intents, ['message_received'], functio
 });
 
 _listener2.default.hears(_nlp.SYSTEM.STOP.intents, ['message_received'], function (bot, message) {
-  bot.reply(message, _alexaResponse2.default.say(_nlp.SYSTEM.STOP.responses.goodbye).shouldEndSession(true));
+  bot.reply(message, _alexaResponse2.default.shouldEndSession(true));
   // message.utu.event("Goodbye");
 });

@@ -131,7 +131,7 @@ ear.hears(SYSTEM.HELP.intents, ['message_received'], (bot, message) => {
 ear.hears(SYSTEM.STOP.intents, ['message_received'], (bot, message) => {
   bot.reply(message,
     response
-    .say(SYSTEM.STOP.response.goodbye)
+    .say(SYSTEM.STOP.responses.goodbye)
       .shouldEndSession(true)
   );
   // message.utu.event("Goodbye");

@@ -89,6 +89,6 @@ _listener2.default.hears(_nlp.SYSTEM.HELP.intents, ['message_received'], functio
 });
 
 _listener2.default.hears(_nlp.SYSTEM.STOP.intents, ['message_received'], function (bot, message) {
-  bot.reply(message, _alexaResponse2.default.say(_nlp.SYSTEM.STOP.response.goodbye).shouldEndSession(true));
+  bot.reply(message, _alexaResponse2.default.say(_nlp.SYSTEM.STOP.responses.goodbye).shouldEndSession(true));
   // message.utu.event("Goodbye");
 });

@@ -1,7 +1,5 @@
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral([''], ['']);
-
 var _alexaResponse = require('alexa-response');
 
 var _alexaResponse2 = _interopRequireDefault(_alexaResponse);
@@ -16,8 +14,6 @@ var _nlp = require('./nlp');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
 _listener2.default.on('message_received', function (bot, message) {
   if (message.alexa.session.application.applicationId !== process.env.ALEXA_APPID) {
     bot.reply(message, _alexaResponse2.default.fail('Invalid applicationId: ' + message.alexa.session.application.applicationId).shouldEndSession(true));
@@ -25,7 +21,7 @@ _listener2.default.on('message_received', function (bot, message) {
 });
 
 _listener2.default.hears(_nlp.SYSTEM.LAUNCH.intents, ['message_received'], function (bot, message) {
-  bot.reply(message, _alexaResponse2.default.say(_nlp.SYSTEM.LAUNCH.responses.greeting)(_templateObject).reprompt(_nlp.SYSTEM.HELP.responses.reprompt).shouldEndSession(false));
+  bot.reply(message, _alexaResponse2.default.say(_nlp.SYSTEM.LAUNCH.responses.greeting).reprompt(_nlp.SYSTEM.HELP.responses.reprompt).shouldEndSession(false));
   // message.utu.event("Session Launch");
 });
 

@@ -16,7 +16,7 @@ ear.on('message_received', function(bot, message) {
 ear.hears(SYSTEM.LAUNCH.intents, ['message_received'], function(bot, message) {
   bot.reply(message,
     response
-      .say(SYSTEM.LAUNCH.responses.greeting)``
+      .say(SYSTEM.LAUNCH.responses.greeting)
       .reprompt(SYSTEM.HELP.responses.reprompt)
       .shouldEndSession(false)
   );

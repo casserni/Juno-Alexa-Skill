@@ -3,7 +3,7 @@ export const ALL = {
     intents: ['GetAllCurrencies'],
     slots: [],
     utterances: [
-      '{list|show|show me|tell me|give me} {-|all} {-|the} {currencies}',
+      '{list|show|show me|tell me|give me} {-|all} {-|the} {-|currencies}',
     ],
   },
 }
@@ -51,7 +51,9 @@ export const SYSTEM = {
   LAUNCH: {
     intents: ['LaunchRequest'],
     slots: [],
-    utterances: [],
+    utterances: [
+      '{launch}'
+    ],
     responses: {
       intro: `US Dollar Exchange is a currency converter than will tell you how foriegn
       currencies currently compare to the US Dollar`,

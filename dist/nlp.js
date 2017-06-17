@@ -7,7 +7,7 @@ var ALL = exports.ALL = {
   ALL_CURRENCIES: {
     intents: ['GetAllCurrencies'],
     slots: [],
-    utterances: ['{list|show|show me|tell me|give me} {-|all} {-|the} {currencies}']
+    utterances: ['{list|show|show me|tell me|give me} {-|all} {-|the} {-|currencies}']
   }
 };
 var CLIPS = exports.CLIPS = {
@@ -43,7 +43,7 @@ var SYSTEM = exports.SYSTEM = {
   LAUNCH: {
     intents: ['LaunchRequest'],
     slots: [],
-    utterances: [],
+    utterances: ['{launch}'],
     responses: {
       intro: 'US Dollar Exchange is a currency converter than will tell you how foriegn\n      currencies currently compare to the US Dollar'
     }

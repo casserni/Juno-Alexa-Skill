@@ -23,19 +23,13 @@
       "intent": "Supported"
     },
     {
-      "intent": "help"
+      "intent": "Help"
     },
     {
       "intent": "LaunchRequest"
     },
     {
-      "intent": "quit"
-    },
-    {
-      "intent": "exit"
-    },
-    {
-      "intent": "bye"
+      "intent": "Finished"
     },
     {
       "intent": "AMAZON.HelpIntent"
@@ -49,8 +43,5 @@
     {
       "intent": "AMAZON.StopIntent"
     },
-    {
-      "intent": "thanks"
-    }
   ]
 }```

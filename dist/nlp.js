@@ -36,7 +36,7 @@ var SYSTEM = exports.SYSTEM = {
     slots: [],
     utterances: ['{help} {-|me}'],
     responses: {
-      help: 'You can use this bot to check supported currency by asking "is Euro\n        supported".  Likewise compare by currency by saying "compare to Euro".\n        If you need a list of currencies, just say "list currencies". If you are\n        finished with your experience say quit',
+      help: 'You can use this bot to check supported currency by asking "is Euro\n        supported".  Likewise compare by currency by saying "compare to Euro".\n        If you need a list of currencies, just say "list currencies". If you are\n        finished with your experience say finished',
       reprompt: 'Can I help you with anything?'
     }
   },
@@ -59,7 +59,7 @@ var SYSTEM = exports.SYSTEM = {
   STOP: {
     intents: ['AMAZON.CancelIntent', 'AMAZON.StopIntent', 'Quit'],
     slots: [],
-    utterances: ['{quit|exit|bye|end|finished|no|nope}'],
+    utterances: ['{stop|bye|end|finished|no|nope}'],
     responses: {
       goodbye: 'Goodbye!'
     }

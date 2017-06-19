@@ -42,10 +42,9 @@ Start hello
 Start hey
 Start start
 Start begin
-Quit quit
-Quit exit
-Quit bye
-Quit end
-Quit finished
-Quit no
-Quit nope
+Finished stop
+Finished bye
+Finished end
+Finished finished
+Finished no
+Finished nope

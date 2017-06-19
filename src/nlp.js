@@ -44,7 +44,7 @@ export const SYSTEM = {
       help: `You can use this bot to check supported currency by asking "is Euro
         supported".  Likewise compare by currency by saying "compare to Euro".
         If you need a list of currencies, just say "list currencies". If you are
-        finished with your experience say quit`,
+        finished with your experience say finished`,
       reprompt: `Can I help you with anything?`
     },
   },
@@ -70,10 +70,10 @@ export const SYSTEM = {
     }
   },
   STOP: {
-    intents: ['AMAZON.CancelIntent', 'AMAZON.StopIntent', 'Quit'],
+    intents: ['AMAZON.CancelIntent', 'AMAZON.StopIntent', 'Finished'],
     slots: [],
     utterances: [
-      '{quit|exit|bye|end|finished|no|nope}'
+      '{stop|bye|end|finished|no|nope}'
     ],
     responses: {
       goodbye: 'Goodbye!',

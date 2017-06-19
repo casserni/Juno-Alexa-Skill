@@ -57,7 +57,7 @@ var SYSTEM = exports.SYSTEM = {
     }
   },
   STOP: {
-    intents: ['AMAZON.CancelIntent', 'AMAZON.StopIntent', 'Quit'],
+    intents: ['AMAZON.CancelIntent', 'AMAZON.StopIntent', 'Finished'],
     slots: [],
     utterances: ['{stop|bye|end|finished|no|nope}'],
     responses: {

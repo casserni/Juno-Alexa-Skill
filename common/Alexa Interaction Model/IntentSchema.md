@@ -26,6 +26,9 @@
       "intent": "Help"
     },
     {
+      "intent": "Start"
+    },
+    {
       "intent": "LaunchRequest"
     },
     {
@@ -42,6 +45,6 @@
     },
     {
       "intent": "AMAZON.StopIntent"
-    },
+    }
   ]
 }```

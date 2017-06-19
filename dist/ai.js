@@ -21,7 +21,7 @@ _listener2.default.on('message_received', function (bot, message) {
 });
 
 _listener2.default.hears(_nlp.SYSTEM.LAUNCH.intents, ['message_received'], function (bot, message) {
-  bot.reply(message, _alexaResponse2.default.say(_nlp.SYSTEM.LAUNCH.responses.greeting).reprompt(_nlp.SYSTEM.HELP.responses.reprompt).shouldEndSession(false));
+  bot.reply(message, _alexaResponse2.default.say(_nlp.SYSTEM.LAUNCH.responses.intro).say(_nlp.SYSTEM.HELP.responses.help).reprompt(_nlp.SYSTEM.HELP.responses.reprompt).shouldEndSession(false));
   // message.utu.event("Session Launch");
 });
 

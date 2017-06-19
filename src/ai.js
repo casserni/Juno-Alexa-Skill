@@ -16,7 +16,8 @@ ear.on('message_received', function(bot, message) {
 ear.hears(SYSTEM.LAUNCH.intents, ['message_received'], function(bot, message) {
   bot.reply(message,
     response
-      .say(SYSTEM.LAUNCH.responses.greeting)
+      .say(SYSTEM.LAUNCH.responses.intro)
+      .say(SYSTEM.HELP.responses.help)
       .reprompt(SYSTEM.HELP.responses.reprompt)
       .shouldEndSession(false)
   );
@@ -132,7 +133,7 @@ ear.hears(SYSTEM.STOP.intents, ['message_received'], (bot, message) => {
   bot.reply(message,
     response
     .say(SYSTEM.STOP.responses.goodbye)
-      .shouldEndSession(true)
+    .shouldEndSession(true)
   );
   // message.utu.event("Goodbye");
 });

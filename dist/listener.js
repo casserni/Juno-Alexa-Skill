@@ -14,6 +14,7 @@ var _alexaBotkit2 = _interopRequireDefault(_alexaBotkit);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var verifier = require('alexa-verifier'
 // import { uTu, constants } from 'utu';
 
 // tag utu constants to app environment
@@ -23,7 +24,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // });
 
 // define ears for Alexa
-var ears = (0, _alexaBotkit2.default)({
+);var ears = (0, _alexaBotkit2.default)({
   debug: true
 });
 

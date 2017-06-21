@@ -32,7 +32,7 @@ _listener2.default.hears(_nlp.SYSTEM.START.intents, ['message_received'], functi
 
 _listener2.default.hears(_nlp.ALL.ALL_CURRENCIES.intents, ['message_received'], function (bot, message) {
   (0, _service.getNames)();
-  bot.reply(message, _alexaResponse2.default.say('Supported currencies are as follows ' + (0, _service.getNames)().join(', ')).reprompt(_nlp.SYSTEM.HELP.responses.reprompt).shouldEndSession(false));
+  bot.reply(message, _alexaResponse2.default.say('Supported currencies are as follows ' + (0, _service.getNames)().join(', ')).reprompt(_nlp.SYSTEM.HELP.responses.reprompt).shouldEndSession(true));
   // message.utu.event("All Currencies");
 });
 

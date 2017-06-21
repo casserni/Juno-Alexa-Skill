@@ -40,7 +40,7 @@ ear.hears(ALL.ALL_CURRENCIES.intents, ['message_received'], function(bot, messag
         response
         .say(`Supported currencies are as follows ${getNames().join(', ')}`)
         .reprompt(SYSTEM.HELP.responses.reprompt)
-        .shouldEndSession(false)
+        .shouldEndSession(true)
       );
     // message.utu.event("All Currencies");
 });

@@ -1,5 +1,6 @@
 import Botkit from 'botkit'
 import alexa from 'alexa-botkit';
+const verifier = require('alexa-verifier')
 // import { uTu, constants } from 'utu';
 
 // tag utu constants to app environment

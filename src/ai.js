@@ -55,7 +55,7 @@ ear.hears(CLIPS.RATES.intents, ['message_received'], function(bot, message) {
             response
               .say(`One US Dollar is equivalent to ${res} ${currency}`)
               .reprompt(SYSTEM.HELP.responses.reprompt)
-              .shouldEndSession(false)
+              .shouldEndSession(true)
           );
         });
       // message.utu.event("Rate by Currency", {
@@ -68,7 +68,7 @@ ear.hears(CLIPS.RATES.intents, ['message_received'], function(bot, message) {
         response
           .ask(`Sorry, but ${currency} is not supported.  Please try again.`)
           .reprompt(SYSTEM.HELP.responses.reprompt)
-          .shouldEndSession(false)
+          .shouldEndSession(true)
       );
       // message.utu.event("Error - Rate by Currency");
     }
@@ -77,7 +77,7 @@ ear.hears(CLIPS.RATES.intents, ['message_received'], function(bot, message) {
       response
         .ask("Sorry, I didn't catch a currency.  Can you repeat the statement?")
         .reprompt(SYSTEM.HELP.responses.reprompt)
-        .shouldEndSession(false)
+        .shouldEndSession(true)
     );
     // message.utu.event("Error - Rate by Currency");
   }
@@ -93,14 +93,14 @@ ear.hears(CLIPS.SUPPORTED.intents, ['message_received'], function(bot, message) 
         response
           .say(`Yes, ${currency} is supported`)
           .reprompt(SYSTEM.HELP.responses.reprompt)
-          .shouldEndSession(false)
+          .shouldEndSession(true)
           );
     } else {
       bot.reply(message,
         response
           .ask(`No, ${currency} is not currently supported.`)
           .reprompt(SYSTEM.HELP.responses.reprompt)
-          .shouldEndSession(false)
+          .shouldEndSession(true)
       );
     }
     // message.utu.event("Supported", {
@@ -113,7 +113,7 @@ ear.hears(CLIPS.SUPPORTED.intents, ['message_received'], function(bot, message) 
       response
         .ask("Sorry, I didn't catch a currency.  Can you repeat the statement?")
         .reprompt(SYSTEM.HELP.responses.reprompt)
-        .shouldEndSession(false)
+        .shouldEndSession(true)
     );
     // message.utu.event("Error - Supported");
   }
@@ -124,7 +124,7 @@ ear.hears(SYSTEM.HELP.intents, ['message_received'], (bot, message) => {
     response
       .say(SYSTEM.HELP.responses.help)
       .reprompt(SYSTEM.HELP.responses.reprompt)
-      .shouldEndSession(false)
+      .shouldEndSession(true)
   );
   // message.utu.event("Help");
 });
